@@ -37,16 +37,19 @@ body {
   font-size: 2rem;
   border: 1px solid white;
   outline: none;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(27, 27, 27, 0.75);
+  border-radius: 2px;
+  color: #ffffff;
+  transition: all 0.2s;
 }
 
 .calculator-grid > button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(75, 75, 75, 0.9);
 }
 
 .output {
   grid-column: 1 / -1;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.315);
   color: #ffffff;
   display: flex;
   align-items: flex-end;
@@ -55,6 +58,7 @@ body {
   padding: 0.75rem;
   word-wrap: break-word;
   word-break: break-all;
+  border-radius: 10px;
 }
 
 .output .previous-operand {
@@ -68,4 +72,24 @@ body {
 
 .span-two {
   grid-column: span 2;
+}
+
+.sign {
+  position: absolute;
+  content: "";
+  top: 95vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.sign > a {
+  text-decoration: none;
+  color: rgba(31, 192, 255, 0.822);
+  transition: all 0.2s;
+}
+
+.sign > a:hover {
+  color: rgb(78, 194, 240);
 }
