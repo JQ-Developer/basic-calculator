@@ -128,6 +128,17 @@ numberButtons.forEach((button) => {
   });
 });
 
+window.addEventListener("keydown", (e) => {
+  for (let numbers of numberButtons) {
+    if (e.key == numbers.innerText) {
+      {
+        calculator.appendNumber(e.key);
+        calculator.updateDisplay();
+      }
+    }
+  }
+});
+
 //ADDS OPERATOR BUTTONS
 operationButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -135,6 +146,19 @@ operationButtons.forEach((button) => {
     calculator.updateDisplay();
   });
 });
+
+window.addEventListener("keydown", (e) => {
+  for (let operators of operationButtons) {
+    if (e.key == operators.innerText) {
+      {
+        calculator.chooseOperation(e.key);
+        calculator.updateDisplay();
+      }
+    }
+  }
+});
+
+console.log(operationButtons[1].innerText);
 
 // CLEAR ALL
 allClearButton.addEventListener("click", () => {
@@ -148,8 +172,23 @@ deleteButton.addEventListener("click", () => {
   calculator.updateDisplay();
 });
 
+window.addEventListener("keydown", (e) => {
+  if (e.key == "Backspace") {
+    calculator.delete();
+    calculator.updateDisplay();
+  }
+});
+
 //COMPUTATIONS
 equalsButton.addEventListener("click", () => {
   calculator.compute();
   calculator.updateDisplay();
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key == "Enter") {
+    e.preventDefault();
+    calculator.compute();
+    calculator.updateDisplay();
+  }
 });
